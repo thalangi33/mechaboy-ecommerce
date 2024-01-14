@@ -1,6 +1,8 @@
 # Mechaboy (E-commerce MERN app)
 
-Mechaboy is an e-commerce MERN application, built with ShadCN UI and Redux Toolkit.
+Mechaboy is an e-commerce MERN application, built with ShadCN UI and Redux Toolkit. 
+
+Website link: https://www.mechaboy.thalangikshahang.com/
 
 ## Overview
 
