@@ -1,0 +1,47 @@
+import { ColumnDef } from "@tanstack/react-table";
+
+// This type is used to define the shape of our data.
+// You can use a Zod schema here if you want.
+export type OrderColumn = {
+  orderItems: any[];
+  phone: string;
+  address: string;
+  createdAt: string;
+};
+
+export const columns: ColumnDef<OrderColumn>[] = [
+  {
+    header: "Order items",
+    id: "orderItem",
+    cell: ({ row }) => (
+      <div className="items-center">
+        {row.original.orderItems.map((orderItem) => (
+          <div className="inline-flex items-center justify-center gap-x-3">
+            <div>{orderItem.product.name}</div>
+            <div>${orderItem.product.price}</div>
+            <div className="flex items-center gap-x-2">
+              <div>{orderItem.color.name}</div>
+              <div
+                className="border p-2 rounded-full"
+                style={{ backgroundColor: orderItem.color.value }}
+              ></div>
+            </div>
+            <div>Quantity: {orderItem.quantity}</div>
+          </div>
+        ))}
+      </div>
+    ),
+  },
+  {
+    accessorKey: "phone",
+    header: "Phone",
+  },
+  {
+    accessorKey: "address",
+    header: "Address",
+  },
+  {
+    accessorKey: "createdAt",
+    header: "Created date",
+  },
+];
